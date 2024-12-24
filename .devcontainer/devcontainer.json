@@ -4,8 +4,5 @@
   "postCreateCommand": "bash .devcontainer/install-gtest.sh",
   "features": {
     "ghcr.io/devcontainers/features/git:1": {}
-  },
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
   }
 }
