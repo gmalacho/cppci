@@ -14,9 +14,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - uses: actions/checkout@v2
     - name: Say Hello
       run: echo "Hello CI" ; pwd
-    - name: Build
+    - name: Run build script
       run: ./scripts/build.sh
     - name: Run UTS
       run: ./scripts/run_uts.sh
