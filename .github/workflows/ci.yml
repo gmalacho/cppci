@@ -13,6 +13,9 @@ jobs:
   Run-UTS:
     runs-on: ubuntu-latest
 
+    container:
+      image: ghcr.io/OWNER/REPO:latest
+
     steps:
     - uses: actions/checkout@v2
     - name: Say Hello
