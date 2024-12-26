@@ -17,7 +17,6 @@ jobs:
     - name: Say Hello
       run: echo "Hello CI"
     - name: Build
-      run: echo "./scripts/build.sh"
+      run: ./scripts/build.sh
     - name: Run UTS
-      run: echo "./scripts/run_uts.sh"
-
+      run: ./scripts/run_uts.sh
