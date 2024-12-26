@@ -15,5 +15,9 @@ jobs:
 
     steps:
     - name: Say Hello
-      run: echo "Hello CI are you there ?"
+      run: echo "Hello CI"
+    - name: Build
+      run: echo "./scripts/build.sh"
+    - name: Run UTS
+      run: echo "./scripts/run_uts.sh"
 
