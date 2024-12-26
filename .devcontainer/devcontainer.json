@@ -1,7 +1,6 @@
 {
   "name": "C++ Development Container",
-  "image": "mcr.microsoft.com/vscode/devcontainers/universal:latest",
-  "postCreateCommand": "bash .devcontainer/install-gtest.sh && .devcontainer/update-gcc.sh",
+  "image": "mcr.microsoft.com/vscode/devcontainers/cpp:latest",
   "features": {
     "ghcr.io/devcontainers/features/git:1": {}
   }
