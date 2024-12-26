@@ -19,5 +19,5 @@ add_executable(main main.cpp)
 # Link Google Test libraries
 target_link_libraries(main GTest::gtest GTest::gtest_main)
 
-# Add subdirectory for ut
+# Add subdirectory for unit tests
 add_subdirectory(ut)
