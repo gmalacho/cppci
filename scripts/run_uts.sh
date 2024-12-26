@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # Set the directory containing the executables
 BIN_DIR="./build/bin"
