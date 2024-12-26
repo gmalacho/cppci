@@ -7,6 +7,9 @@ set(CMAKE_CXX_STANDARD 17)
 # Add debugging symbols
 set(CMAKE_BUILD_TYPE Debug)
 
+# Enable debug information
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
+
 # Add Google Test
 find_package(GTest REQUIRED)
 

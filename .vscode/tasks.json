@@ -1,6 +1,30 @@
 {
     "tasks": [
         {
+            "type": "shell",
+            "label": "configure",
+            "command": "cmake",
+            "args": [
+                "-S",
+                ".",
+                "-B",
+                "build"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "build",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "build"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
             "type": "cppbuild",
             "label": "C/C++: g++ build active file",
             "command": "/usr/bin/g++",
