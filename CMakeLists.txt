@@ -14,9 +14,10 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
 find_package(GTest REQUIRED)
 
 # Add test source files
-add_executable(runTests main.cpp)
-add_executable(simple_test ut/simple_test.cpp)
+add_executable(main main.cpp)
 
 # Link Google Test libraries
-target_link_libraries(runTests GTest::gtest GTest::gtest_main)
-target_link_libraries(simple_test GTest::gtest GTest::gtest_main)
+target_link_libraries(main GTest::gtest GTest::gtest_main)
+
+# Add subdirectory for ut
+add_subdirectory(ut)

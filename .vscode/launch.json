@@ -2,10 +2,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug runTests",
+            "name": "Debug run_ut",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/runTests",
+            "program": "${workspaceFolder}/build/run_ut",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
