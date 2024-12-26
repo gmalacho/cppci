@@ -1,24 +1,28 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <cassert>
 #include <gtest/gtest.h>
 #include <iostream>
 
-void test_sort() {
-    std::vector<int> v = {4, 2, 3, 1, 5};
-    std::sort(v.begin(), v.end());
-    assert((v == std::vector<int>{1, 2, 3, 4, 5}));
+// Example test for addition
+TEST(MathTest, Addition) {
+    EXPECT_EQ(2 + 2, 4);
 }
 
-void test_reverse() {
-    std::vector<int> v = {1, 2, 3, 4, 5};
-    std::reverse(v.begin(), v.end());
-    assert((v == std::vector<int>{5, 4, 3, 2, 1}));
+// Example test for subtraction
+TEST(MathTest, Subtraction) {
+    EXPECT_EQ(5 - 3, 2);
+}
+
+// Example test for multiplication
+TEST(MathTest, Multiplication) {
+    EXPECT_EQ(3 * 4, 12);
+}
+
+// Example test for division
+TEST(MathTest, Division) {
+    EXPECT_EQ(10 / 2, 5);
 }
 
 int main(int argc, char **argv) {
-    std::cout << "Starting tests..." << std::endl;
+    std::cout << "Starting tests in file: " << __FILE__ << std::endl;
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
