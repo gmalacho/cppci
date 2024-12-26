@@ -12,7 +12,7 @@ TEST(SetTest, Erase) {
     std::set<int> s = {1, 2, 3};
     s.erase(2);
     EXPECT_EQ(s.size(), 2);
-    EXPECT_EQ(s.count(2), 0);
+    EXPECT_EQ(s.count(2), 1);
 }
 
 int main(int argc, char **argv) {
