@@ -8,6 +8,9 @@ set(CMAKE_CXX_STANDARD 11)
 find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
 
+# Set the output directory for executables
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
 # Create an executable for running all tests
 add_executable(run_ut run_ut.cpp)
 
@@ -16,3 +19,6 @@ target_link_libraries(run_ut ${GTEST_LIBRARIES} pthread)
 
 # Add the subdirectory for vector_tests
 add_subdirectory(vector_tests)
+
+# Add the subdirectory for main_tests
+add_subdirectory(main_tests)
