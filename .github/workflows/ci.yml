@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - 'feature/**'
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/your-org/your-repo:dev # Ensure this is the correct container image
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Notify CI start
+      run: echo "CI workflow has started"
+
+    - name: Build devcontainer
+      run: docker build -t my-devcontainer -f .devcontainer/Dockerfile .
+
+    - name: Check if running in Codespaces
+      run: |
+        if [ -n "$CODESPACES" ]; then
+          echo "Running in Codespaces"
+        else
+          echo "Not running in Codespaces"
+        fi
+
+    - name: Set up C++ environment
+      uses: actions/setup-cpp@v1
+
+    - name: Install dependencies
+      run: sudo apt-get install -y cmake g++ # Adjust this line based on your project's dependencies
+
+    - name: Build project
+      run: chmod +x ./scripts/build.sh && ./scripts/build.sh # Ensure the script is executable
+
+    - name: Run unit tests
+      run: chmod +x ./scripts/run_uts.sh && ./scripts/run_uts.sh # Ensure the script is executable
+
