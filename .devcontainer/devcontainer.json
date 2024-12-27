@@ -9,5 +9,5 @@
   "mounts": [
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
   ],
-  "postStartCommand": "sudo service docker start"
+  "postStartCommand": "sudo usermod -aG docker $USER && sudo chown $USER /var/run/docker.sock"
 }
