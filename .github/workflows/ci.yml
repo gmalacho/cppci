@@ -25,5 +25,5 @@ jobs:
 
     - name: Run the Docker image
       run: |
-        docker run --rm my-test-image echo "Hello Word!"
+        docker run --rm my-test-image echo "./scripts/build.sh && ./scripts/run_uts"
       
