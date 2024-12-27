@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
     g++ \
     wget \
     unzip \
+    gdb \
     && apt-get clean
 
 # Add PPA repository for gcc-4.9 and update package lists

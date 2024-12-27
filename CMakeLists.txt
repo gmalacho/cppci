@@ -7,6 +7,9 @@ set(CMAKE_CXX_STANDARD 17)
 # Add debugging symbols
 set(CMAKE_BUILD_TYPE Debug)
 
+# Set the output directory for executables
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
 # Enable debug information
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
 
