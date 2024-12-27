@@ -16,7 +16,7 @@ RUN apk update && apk add --no-cache \
 # Install Google Test
 RUN mkdir -p /usr/src/gtest \
     && cd /usr/src/gtest \
-    && git clone --branch release-1.10.0 https://github.com/google/googletest.git \
+    && git clone https://github.com/google/googletest.git \
     && cd googletest \
     # Add flag to disable treating warnings as errors
     && cmake -DCMAKE_CXX_FLAGS="-Wno-error -Wno-maybe-uninitialized" . \
