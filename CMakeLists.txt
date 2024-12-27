@@ -1,8 +1,9 @@
 cmake_minimum_required(VERSION 3.10)
-project(GoogleTestExample)
+project(MainProject)
 
 # Use C++17 or newer
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Add debugging symbols
 set(CMAKE_BUILD_TYPE Debug)
@@ -24,3 +25,6 @@ target_link_libraries(main GTest::gtest GTest::gtest_main)
 
 # Add subdirectory for unit tests
 add_subdirectory(ut)
+
+# Add subdirectory for C++ tests
+add_subdirectory(learning/c++)
