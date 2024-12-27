@@ -13,18 +13,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Pobierz kod źródłowy
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2. Zainstaluj środowisko Dev Container
       - name: Setup Dev Container
         uses: devcontainers/setup@v1
 
-      # 3. Uruchom Dev Container
       - name: Build and Start Dev Container
         run: devcontainer up --workspace-folder .
 
-      # 4. Uruchom testy w środowisku Dev Container
       - name: Run tests
         run: devcontainer exec --workspace-folder . pytest tests/
