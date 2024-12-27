@@ -1,55 +1,33 @@
 {
     "version": "0.2.0",
     "configurations": [
-        {
-            "name": "Debug run_ut",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/build/run_ut",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "preLaunchTask": "build",
-            "miDebuggerPath": "/usr/bin/gdb",
-            "logging": {
-                "trace": true,
-                "traceResponse": true,
-                "engineLogging": true
-            }
-        },
-        {
-            "name": "(gdb) Launch",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "enter program name, for example ${workspaceFolder}/a.out",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${fileDirname}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                },
-                {
-                    "description": "Set Disassembly Flavor to Intel",
-                    "text": "-gdb-set disassembly-flavor intel",
-                    "ignoreFailures": true
-                }
-            ]
+      {
+        "name": "Debug",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/build/bin/main",  // Ścieżka do pliku wykonywalnego
+        "args": [],  // Argumenty wiersza poleceń dla programu, jeśli potrzebujesz
+        "stopAtEntry": false,  // Ustawić na true, aby zatrzymać program przy pierwszym wierszu
+        "cwd": "${workspaceFolder}",  // Ustawia katalog roboczy na główny folder projektu
+        "environment": [],  // Ustaw zmienne środowiskowe, jeśli są potrzebne
+        "externalConsole": true,  // Używaj zewnętrznej konsoli (jeśli chcesz widzieć wyjście w oddzielnym oknie)
+        "MIMode": "gdb",  // Używa GDB jako debugera
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          }
+        ],
+        "miDebuggerPath": "/usr/bin/gdb",  // Ścieżka do GDB (dostosuj, jeśli jest inna)
+        "preLaunchTask": "Build",  // Opcjonalnie, jeśli masz zadanie do budowania przed uruchomieniem debugera
+        "miDebuggerArgs": "",  // Argumenty do GDB, jeśli są potrzebne
+        "logging": {
+          "trace": true,
+          "traceResponse": true,
+          "engineLogging": true
         }
+      }
     ]
-}
+  }
+  
