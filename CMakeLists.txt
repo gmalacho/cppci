@@ -21,10 +21,10 @@ find_package(GTest REQUIRED)
 add_executable(main main.cpp)
 
 # Link Google Test libraries
-target_link_libraries(main GTest::gtest GTest::gtest_main)
+target_link_libraries(main)
 
-# Add subdirectory for unit tests
-add_subdirectory(ut)
+# Enable testing
+enable_testing()
 
 # Add subdirectory for C++ tests
 add_subdirectory(learning/c++)
