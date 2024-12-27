@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Setup Dev Container
-        uses: devcontainers/ci
+        uses: devcontainers/ci@v3
 
       - name: Build and Start Dev Container
         run: devcontainer up --workspace-folder .
