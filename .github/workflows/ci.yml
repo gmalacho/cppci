@@ -14,17 +14,17 @@ jobs:
     
     steps:
     - name: Checkout the repository
-      uses: actions/checkout@v2  # Sprawdza kod z repozytorium
+      uses: actions/checkout@v2
 
     - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v2  # Ustawia Docker Buildx dla bardziej zaawansowanego builda
+      uses: docker/setup-buildx-action@v2
     
     - name: Build the Docker image
       run: |
-        docker build -t my-test-image .devcontainer/  # Zbuduj obraz z Twojego Dockerfile
-        docker run --name my-test-container my-test-image  # Uruchom kontener
+        docker build -t my-test-image .devcontainer/ 
+        docker run --name my-test-container my-test-image
 
     - name: Run tests
       run: |
-        docker exec my-test-container bash -c "cd /workspace && make test"  # Uruchom testy wewnątrz kontenera
-        docker rm -f my-test-container  # Usuwa kontener po wykonaniu testów
+        docker exec my-test-container bash -c "cd /workspace && ./scripts/build.sh && ./scripts/run_uts.sh"
+        docker rm -f my-test-container
