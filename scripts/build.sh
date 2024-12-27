@@ -1,14 +1,7 @@
 #!/bin/bash
 set -e
-
-# Create build directory if it doesn't exist
-if [ ! -d "build" ]; then
-  mkdir build
-fi
-
-# Navigate into the build directory
+rm -rf build
+mkdir build
 cd build
-
-# Run cmake and make
 cmake ..
 make
