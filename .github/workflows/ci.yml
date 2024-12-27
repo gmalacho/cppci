@@ -1,26 +1,26 @@
-name: CI
+name: Dev Container CI
 
 on:
   push:
     branches:
       - main
-      - 'feature/**'
   pull_request:
     branches:
       - main
 
 jobs:
-  Run-UTS:
+  build-and-test:
     runs-on: ubuntu-latest
 
-    container:
-      image: mcr.microsoft.com/vscode/devcontainers/cpp:latest
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Say Hello
-      run: echo "Hello CI" ; pwd
-    - name: Run build script
-      run: ./scripts/build.sh
-    - name: Run UTS
-      run: ./scripts/run_uts.sh
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Dev Container
+        uses: devcontainers/ci@v0
+
+      - name: Run build
+        run: ./scripts/build.sh
+
+      - name: Run build
+        run: ./scripts/run_uts.sh
