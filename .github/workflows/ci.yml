@@ -21,9 +21,9 @@ jobs:
     
     - name: Build the Docker image
       run: |
-        docker build -t testdocker -f Dockerfile .
+        docker build -t ghcr.io/gmalacho/testdocker -f Dockerfile .
 
     - name: Run the Docker image
       run: |
-        docker run --rm -v .:/workspace testdocker /bin/bash -c "./scripts/build.sh && ./scripts/run_uts.sh"
+        docker run --rm -v .:/workspace ghcr.io/gmalacho/testdocker /bin/bash -c "./scripts/build.sh && ./scripts/run_uts.sh"
       
