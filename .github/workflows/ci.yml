@@ -21,7 +21,7 @@ jobs:
     
     - name: Build the Docker image
       run: |
-        docker build -t my-test-image .  # Zbuduj obraz z Twojego Dockerfile
+        docker build -t my-test-image .devcontainer/  # Zbuduj obraz z Twojego Dockerfile
         docker run --name my-test-container my-test-image  # Uruchom kontener
 
     - name: Run tests
