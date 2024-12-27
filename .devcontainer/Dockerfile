@@ -1,5 +1,5 @@
 # Use the base Ubuntu image
-FROM ubuntu:latest
+FROM mcr.microsoft.com/devcontainers/base:ubuntu
 
 # Set environment variable to avoid interactive prompts during installation
 ENV DEBIAN_FRONTEND=noninteractive

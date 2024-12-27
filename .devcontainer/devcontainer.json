@@ -1,9 +1,13 @@
 {
-  "name": "C++ Development Container",
+  "name": "Dev Container with Docker-in-Docker",
   "build": {
     "dockerfile": "Dockerfile"
   },
   "features": {
-    "ghcr.io/devcontainers/features/git:1": {}
-  }
+    "docker-in-docker": "latest" 
+  },
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+  ],
+  "postStartCommand": "echo '{\"experimental\":true,\"features\":{\"buildkit\":true}}' | sudo tee /etc/docker/daemon.json && sudo service docker restart"
 }
