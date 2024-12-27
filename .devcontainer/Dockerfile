@@ -1,1 +1,1 @@
-FROM mcr.microsoft.com/vscode/devcontainers/cpp:latest
+FROM alpine:latest
