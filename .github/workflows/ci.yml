@@ -1,4 +1,4 @@
-name: Dev Container CI
+name: Run Tests in Docker Container
 
 on:
   push:
@@ -9,18 +9,22 @@ on:
       - main
 
 jobs:
-  build-and-test:
-    runs-on: ubuntu-latest
-
+  build:
+    runs-on: ubuntu-latest  # Możesz wybrać inny system operacyjny, np. `ubuntu-latest` lub `windows-latest`
+    
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    - name: Checkout the repository
+      uses: actions/checkout@v2  # Sprawdza kod z repozytorium
 
-      - name: Setup Dev Container
-        uses: devcontainers/ci@v3
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2  # Ustawia Docker Buildx dla bardziej zaawansowanego builda
+    
+    - name: Build the Docker image
+      run: |
+        docker build -t my-test-image .  # Zbuduj obraz z Twojego Dockerfile
+        docker run --name my-test-container my-test-image  # Uruchom kontener
 
-      - name: Build and Start Dev Container
-        run: devcontainer up --workspace-folder .
-
-      - name: Run tests
-        run: devcontainer exec --workspace-folder . pytest tests/
+    - name: Run tests
+      run: |
+        docker exec my-test-container bash -c "cd /workspace && make test"  # Uruchom testy wewnątrz kontenera
+        docker rm -f my-test-container  # Usuwa kontener po wykonaniu testów
