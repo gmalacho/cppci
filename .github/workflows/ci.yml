@@ -21,9 +21,9 @@ jobs:
     
     - name: Build the Docker image
       run: |
-        docker build -t my-test-image -f .devcontainer/DockerfileCI .
+        docker build -t testdocker -f Dockerfile .
 
     - name: Run the Docker image
       run: |
-        docker run --rm my-test-image echo "./scripts/build.sh && ./scripts/run_uts"
+        docker run --rm -v .:/workspace testdocker /bin/bash -c "./scripts/build.sh && ./scripts/run_uts.sh"
       
