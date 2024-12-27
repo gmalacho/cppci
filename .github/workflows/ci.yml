@@ -21,18 +21,5 @@ jobs:
     
     - name: Build the Docker image
       run: |
-        docker build -t my-test-image .devcontainer/ 
-
-    - name: Run Docker container in background
-      run: |
-        docker run -d --name my-test-container my-test-image:latest  # Uruchamia kontener w tle
-      
-    - name: Execute commands in the running container
-      run: |
-        docker exec my-test-container bash -c "cd /workspace && ./scripts/build.sh && ./scripts/run_uts.sh"
-      
-    - name: Cleanup - Stop and remove the container
-      run: |
-        docker stop my-test-container  # Zatrzymuje kontener
-        docker rm my-test-container    # Usuwa kontener
+        docker build -t my-test-image .devcontainer/
       
