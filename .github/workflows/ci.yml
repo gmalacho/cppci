@@ -25,5 +25,5 @@ jobs:
 
     - name: Run the Docker image
       run: |
-        docker run --rm -v .:/workspace ghcr.io/gmalacho/testdocker /bin/bash -c "./scripts/build.sh && ./scripts/run_uts.sh"
+        docker run --rm -v .:/workspace ghcr.io/gmalacho/testdocker /bin/bash -c "./scripts/build.sh && cd ./build/ && ctest"
       
