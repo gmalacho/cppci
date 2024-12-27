@@ -9,5 +9,5 @@
   "mounts": [
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
   ],
-  "postStartCommand": "echo '{\"experimental\":true,\"features\":{\"buildkit\":true}}' | sudo tee /etc/docker/daemon.json && sudo service docker restart"
+  "postStartCommand": "sudo service docker start"
 }
